@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+
+        <p id="XML_Example"></p>
+        <script>
+        var XML_Parser, XML_Document;
+        // creates text string
+        var Movie = "<movie>" + "<title>Beetlejuice</title>" + "<director>Tim Burton</director>" + "<year>1988</year>" + "</movie>";
+        // creates DOM parser
+        XML_Parser = new DOMParser();
+        // creates new XML DOM object using the text string
+        XML_Document = XML_Parser.parseFromString(Movie, "text/xml");
+        document.getElementById("XML_Example").innerHTML = XML_Document.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        </script>
+    </body>
+</html>
